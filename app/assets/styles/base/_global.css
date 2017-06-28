@@ -1,0 +1,19 @@
+body {
+    font-family: 'Roboto' , sans-serif;
+    color: #333;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+* {
+    box-sizing: border-box; /* browser will honor
+     your own setting calculating width value and will
+     not affect the 100% if you add a height or width value to its elements --
+     apply this properties globally is a must
+    */ 
+}
+
+a {
+    color: $mainOrange;
+}
