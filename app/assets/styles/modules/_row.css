@@ -7,8 +7,19 @@
         
     }
 
+    &--gutters-large {
+        margin-right: -100px;
+        
+    }
+
     &--gutters > div { /* space between the image and the text in colunmn vertically */
         padding-right: 65px; 
+        
+        
+    }
+
+    &--gutters-large > div { 
+        padding-right: 100px; 
         
         
     }
@@ -25,6 +36,11 @@
         &__medium-4 {
         float: left;
         width: 33.33%;  /* 100=rows available width divided by 12 coloumn grid  =8.33 then multiply it by 4 it give 33.33 1/3 of the row */
+        }
+
+        &__medium-6 {
+        float: left;
+        width: 50%;  
         }
 
         &__medium-4--larger {
