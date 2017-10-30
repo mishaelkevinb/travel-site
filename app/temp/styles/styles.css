@@ -464,7 +464,7 @@ img {
             box-sizing: border-box; /* browser will honor
      your own setting calculating width value and will
      not affect the 100% if you add a height or width value to its elements --
-     apply this properties globally is a must
+     applying this properties globally is a must
     */ 
 }
 
@@ -580,6 +580,32 @@ a {
         max-width: 976px;
     }
 
+.wrapper--no-padding-until-medium {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+@media(min-width: 800px){
+
+.wrapper--no-padding-until-medium {
+         padding-left: 18px;
+         padding-right: 18px
+    }
+    }
+
+.wrapper--no-padding-until-large {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+@media(min-width: 1010px){
+
+.wrapper--no-padding-until-large {
+         padding-left: 18px;
+         padding-right: 18px
+    }
+    }
+
 .wrapper .wrapper {
         padding-left: 0;
         padding-right: 0; 
@@ -598,18 +624,56 @@ a {
 
 .page-section {
     padding: 1.2rem 0;
+
 }
 
 @media(min-width: 800px){
 
 .page-section {
         padding: 4.5rem 0
+
 }
     }
 
 .page-section--blue {
         background-color: #2f5572;
         color: #FFF;
+    }
+
+.page-section--no-b-padding-until-medium {
+        padding-bottom: 0;
+    }
+
+@media(min-width: 800px){
+
+.page-section--no-b-padding-until-medium {
+            padding-bottom: 4.5rem
+    }
+    }
+
+.page-section--no-b-padding-until-large {
+        padding-bottom: 0;
+    }
+
+@media(min-width: 1010px){
+
+.page-section--no-b-padding-until-large {
+            padding-bottom: 4.5rem
+    }
+    }
+
+.page-section--testimonials {
+        background-color: #e0e6ef;
+       
+    }
+
+@media(min-width: 1010px){
+
+.page-section--testimonials {
+        background: url('/assets/images/testimonials-bg.jpg') top center no-repeat;
+        background-size: cover
+       
+    }
     }
 
 .headline {
@@ -672,6 +736,12 @@ a {
     display: table; 
     }
 
+/*shorcut or alternative way for clearing out an empty div */
+
+.row--t-padding {
+        padding-top: 80px;
+    }
+
 .row--gutters {
         margin-right: -65px;
         
@@ -694,6 +764,11 @@ a {
         
     }
 
+.row--gutters-small > div {
+        padding-right: 45px;
+
+    }
+
 .row__b-margin-until-medium {
         margin-bottom: 1rem;
     }
@@ -701,9 +776,8 @@ a {
 @media(min-width: 800px){
 
 .row { /* two columns */
-   
 
-    
+        /*Begin Equal height rules */
 
 }
 
@@ -733,6 +807,70 @@ a {
         .row__medium-8--smaller {
             width: 63%;
         }
+        @media(min-width: 800px){
+    .row--equal-height-at-medium {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex
+    }
+    }
+   
+     .row--equal-height-at-medium > div { /* select all the column */
+            float: none; /* stop being Floated */
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex; /* make all the boxes flex and will follow the size of the largest coloumn box */
+     }
+    }
+
+@media(min-width: 1010px){
+
+.row { /* two columns */
+
+        /*Begin Equal height rules */
+
+}
+
+        .row__b-margin-until-large {
+        margin-bottom: 0;
+        }
+
+        .row__large-4 {
+        float: left;
+        width: 33.33%;  /* 100=rows available width divided by 12 coloumn grid  =8.33 then multiply it by 4 it give 33.33 1/3 of the row */
+        }
+
+        .row__large-6 {
+        float: left;
+        width: 50%;  
+        }
+
+        .row__large-4--larger {
+         width: 37%;
+        }
+
+        .row__large-8 {
+            float: left;
+            width: 66.66%; /* 2/3 of the row */
+        }
+
+        .row__large-8--smaller {
+            width: 63%;
+        }
+        @media(min-width: 1010px){
+    .row--equal-height-at-large {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex
+    }
+    }
+   
+     .row--equal-height-at-large > div { /* select all the column */
+            float: none; /* stop being Floated */
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex; /* make all the boxes flex and will follow the size of the largest coloumn box */
+     }
     }
 
 .generic-content-container p {
@@ -770,8 +908,13 @@ a {
         font-weight: 500;
     }
 
+.section-title--blue {
+        color: #2f5572;
+    }
+
 .section-title__icon {
-        
+        position: relative;
+        top: 8px;
         margin-left: auto;
         margin-right: auto;
         display: block;
@@ -831,4 +974,57 @@ a {
         margin-top: 1em;
         font-size: 1.875rem
 }
+    }
+
+.testimonials {
+    background-color: rgba(255,255,255,0.8); /* rgba(red green blue alpha transparency  */
+    padding: 0 18px 1px 18px;
+    margin-bottom: 98px;
+}
+
+@media(min-width: 1010px){
+
+.testimonials { /* breakpoint */
+      padding: 0 1.8125rem 1px 1.8125rem;
+      margin-bottom: 0
+}
+    }
+
+@media(min-width: 1010px){
+
+.testimonials {
+      padding: 0 1.8125rem 1px 1.8125rem;
+      margin-bottom: 0
+}
+    }
+
+.testimonials__last {
+        margin-bottom: 0;
+    }
+
+.testimonials__photo {
+        border-radius: 80px;
+        overflow: hidden;
+        width: 160px;
+        height: 160px;
+        margin: 0 auto -80px auto;
+        position: relative;
+        top: -80px;
+        border: 6px solid rgba(255,255,255,0.8);
+    }
+
+.testimonials__title {
+        color: #2f5572;
+        text-align: center;
+        font-size: 1.5rem;
+        font-weight: 500;
+        margin: 0;
+    }
+
+.testimonials__subtitle {
+        color: #d59541;
+        font-size: 0.9375;
+        text-align: center;
+        font-weight: 400;
+        margin: .25rem 0 1rem 0;
     }

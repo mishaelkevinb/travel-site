@@ -10,7 +10,7 @@ img {
     box-sizing: border-box; /* browser will honor
      your own setting calculating width value and will
      not affect the 100% if you add a height or width value to its elements --
-     apply this properties globally is a must
+     applying this properties globally is a must
     */ 
 }
 

@@ -1,6 +1,10 @@
 .row {
 
-    @mixin clearfix;
+    @mixin clearfix; /*shorcut or alternative way for clearing out an empty div */
+    
+      &--t-padding {
+        padding-top: 80px;
+    }
     
     &--gutters {
         margin-right: -65px;
@@ -23,10 +27,18 @@
         
         
     }
+    
+    &--gutters-small > div {
+        padding-right: 45px;
+
+    }
+
+   
 
     &__b-margin-until-medium {
         margin-bottom: 1rem;
     }
+
     @mixin atMedium { /* two columns */
 
         &__b-margin-until-medium {
@@ -55,10 +67,60 @@
         &__medium-8--smaller {
             width: 63%;
         }
-    
-    }
-   
 
-    
+        /*Begin Equal height rules */
+    &--equal-height-at-medium {
+        @mixin atMedium {
+        display: flex;
+        }
+   
+     & > div { /* select all the column */
+            float: none; /* stop being Floated */
+            display: flex; /* make all the boxes flex and will follow the size of the largest coloumn box */
+     }
+    } 
+ }
+
+  @mixin atLarge { /* two columns */
+
+        &__b-margin-until-large {
+        margin-bottom: 0;
+        }
+
+        &__large-4 {
+        float: left;
+        width: 33.33%;  /* 100=rows available width divided by 12 coloumn grid  =8.33 then multiply it by 4 it give 33.33 1/3 of the row */
+        }
+
+        &__large-6 {
+        float: left;
+        width: 50%;  
+        }
+
+        &__large-4--larger {
+         width: 37%;
+        }
+
+        &__large-8 {
+            float: left;
+            width: 66.66%; /* 2/3 of the row */
+        }
+
+        &__large-8--smaller {
+            width: 63%;
+        }
+
+        /*Begin Equal height rules */
+    &--equal-height-at-large {
+        @mixin atLarge {
+        display: flex;
+        }
+   
+     & > div { /* select all the column */
+            float: none; /* stop being Floated */
+            display: flex; /* make all the boxes flex and will follow the size of the largest coloumn box */
+     }
+    } 
+ }
 
 }
